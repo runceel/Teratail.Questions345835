@@ -1,0 +1,34 @@
+﻿<Window x:Class="Teratail.Questions345835.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Teratail.Questions345835"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <TextBlock VerticalAlignment="Center" Text="線の色" />
+            <ComboBox
+                x:Name="BordColorC2"
+                Margin="5"
+                ItemsSource="{x:Static local:NowData.Colors}"
+                SelectionChanged="BordColorC2_SelectionChanged">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <Ellipse Width="16"  Height="16"  Fill="{Binding Value}" />
+                            <TextBlock  Margin="5,0" VerticalAlignment="Center" Text="{Binding Key}" />
+                        </DockPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
+        <Rectangle
+          Name="Rectan2" Grid.Row="1" Width="120" Height="100" Stroke="Black" StrokeThickness="2" />
+    </Grid>
+</Window>
