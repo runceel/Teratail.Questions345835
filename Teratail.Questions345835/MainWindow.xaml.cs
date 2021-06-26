@@ -15,10 +15,9 @@ namespace Teratail.Questions345835
             InitializeComponent();
         }
 
-        private void BordColorC2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ShowAnotherWindowButton_Click(object sender, RoutedEventArgs e)
         {
-            var pair = (KeyValuePair<string, SolidColorBrush>)BordColorC2.SelectedItem;
-            Rectan2.Stroke = pair.Value;
+            new AnotherWindow().Show();
         }
     }
 }

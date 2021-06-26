@@ -1,0 +1,20 @@
+﻿<Window
+    x:Class="Teratail.Questions345835.AnotherWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Teratail.Questions345835"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AnotherWindow"
+    Width="800"
+    Height="450"
+    DataContext="{x:Static local:NowData.Instance}"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="24">
+            <Run Text="MainWindow で選択されている色は" />
+            <Run Foreground="{Binding SelectedColor.Brush, Mode=OneWay}" Text="{Binding SelectedColor.Name, Mode=OneWay}" />
+            <Run Text="です。" />
+        </TextBlock>
+    </Grid>
+</Window>
