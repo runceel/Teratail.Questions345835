@@ -4,10 +4,12 @@ using System.Windows.Media;
 
 namespace Teratail.Questions345835
 {
-    public class NowData : INotifyPropertyChanged
+    public class NowData : INotifyPropertyChanged // Binding 対応するために INofityPropertyChanged を実装
     {
+        // 今回はここの NowData の static 変数でデータを管理するようにしています。
         public static NowData Instance { get; } = new NowData();
 
+        // Dictionary ではなく ColorInfo の配列にしました。
         public ColorInfo[] Colors { get; } = new ColorInfo[]
         {
             new ColorInfo("Red", Brushes.Red ),
@@ -18,6 +20,7 @@ namespace Teratail.Questions345835
             new ColorInfo("透明", Brushes.Transparent ),
         };
 
+        // 選択された ColorInfo を保持するプロパティ
         private ColorInfo _colorInfo;
         public ColorInfo SelectedColor
         {
